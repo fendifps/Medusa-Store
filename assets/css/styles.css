@@ -627,20 +627,24 @@ body {
     color: white;
 }
 
-/* Products Horizontal Scroll */
+/* Products Horizontal Scroll - CORREGIDO */
 .products-scroll {
     padding: 0 0 80px;
     overflow: hidden;
+    width: 100%;
 }
 
 .products-horizontal {
     display: flex;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    width: 100%;
+    will-change: scroll-position;
 }
 
 .products-horizontal::-webkit-scrollbar {
@@ -649,6 +653,8 @@ body {
 
 .product-card-horizontal {
     min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
     background: white;
     border-radius: 25px;
     overflow: hidden;
@@ -1053,6 +1059,25 @@ body {
     .categories-grid-modern {
         grid-template-columns: 1fr;
     }
+    
+    .products-horizontal {
+        padding: 0 15px 20px 15px;
+        gap: 15px;
+    }
+    
+    .product-card-horizontal {
+        min-width: 260px;
+        max-width: 260px;
+    }
+    
+    .product-img-horizontal {
+        height: 280px;
+        font-size: 80px;
+    }
+    
+    .product-card-horizontal:last-child {
+        margin-right: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1062,5 +1087,32 @@ body {
 
     .menu-link {
         font-size: 24px;
+    }
+    
+    .products-horizontal {
+        padding: 0 10px 20px 10px;
+        gap: 12px;
+    }
+    
+    .product-card-horizontal {
+        min-width: 240px;
+        max-width: 240px;
+    }
+    
+    .product-img-horizontal {
+        height: 260px;
+        font-size: 70px;
+    }
+    
+    .product-info-horizontal {
+        padding: 15px;
+    }
+    
+    .product-name-horizontal {
+        font-size: 16px;
+    }
+    
+    .product-price-horizontal {
+        font-size: 20px;
     }
 }
