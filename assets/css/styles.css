@@ -627,7 +627,7 @@ body {
     color: white;
 }
 
-/* Products Horizontal Scroll - CORREGIDO */
+/* Products Horizontal Scroll - CARRUSEL MEJORADO */
 .products-scroll {
     padding: 0 0 80px;
     overflow: hidden;
@@ -641,10 +641,10 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     width: 100%;
-    will-change: scroll-position;
 }
 
 .products-horizontal::-webkit-scrollbar {
@@ -659,12 +659,12 @@ body {
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     transition: transform 0.3s;
 }
 
-.product-card-horizontal:active {
-    transform: scale(0.98);
+.product-card-horizontal:hover {
+    transform: scale(1.03);
 }
 
 .product-img-horizontal {
@@ -722,6 +722,11 @@ body {
 
 .btn-add-horizontal:active {
     transform: scale(0.95);
+}
+
+.products-horizontal::after {
+    content: "";
+    min-width: 20px;
 }
 
 /* Split Banner */
