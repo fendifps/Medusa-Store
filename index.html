@@ -7,227 +7,340 @@
     <title>MedusaaOnly - Moda Exclusiva</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-    <!-- Header Top Banner -->
-    <div class="header-top">
-        <div class="header-top-content">
-            <div class="promo-item">
-                <i class="ph-fill ph-truck"></i>
-                <span>Envío gratis en compras mayores a $50</span>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Header -->
+    <header class="floating-header">
+        <div class="header-wrapper">
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="logo-center">
+                <img src="./assets/img/medu.jpg" alt="MedusaaOnly" class="logo-floating">
             </div>
-            <div class="promo-divider"></div>
-            <div class="promo-item">
-                <i class="ph-fill ph-gift"></i>
-                <span>15% OFF en tu primera compra</span>
+            
+            <div class="header-actions">
+                <button class="action-icon" id="searchToggle">
+                    <i class="ph-bold ph-magnifying-glass"></i>
+                </button>
+                <button class="action-icon cart-icon" id="cartToggle">
+                    <i class="ph-bold ph-shopping-bag"></i>
+                    <span class="badge">2</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Screen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <button class="menu-close" id="menuClose">
+            <i class="ph-bold ph-x"></i>
+        </button>
+        <nav class="menu-nav">
+            <a href="#home" class="menu-link">
+                <span class="menu-number">01</span>
+                <span class="menu-text">Inicio</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#nuevos" class="menu-link">
+                <span class="menu-number">02</span>
+                <span class="menu-text">Nuevos Arrivals</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#mujer" class="menu-link">
+                <span class="menu-number">03</span>
+                <span class="menu-text">Mujer</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#hombre" class="menu-link">
+                <span class="menu-number">04</span>
+                <span class="menu-text">Hombre</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#accesorios" class="menu-link">
+                <span class="menu-number">05</span>
+                <span class="menu-text">Accesorios</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#sale" class="menu-link sale">
+                <span class="menu-number">06</span>
+                <span class="menu-text">Sale</span>
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+        </nav>
+        <div class="menu-footer">
+            <div class="social-menu">
+                <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+                <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Header Main -->
-    <header>
-        <div class="header-main">
-            <div class="logo-container">
-                <img src="assets/img/medu.jpg" alt="MedusaaOnly Logo" class="logo-img">
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-close" id="searchClose">
+            <i class="ph-bold ph-x"></i>
+        </button>
+        <div class="search-content">
+            <h2>¿Qué buscas?</h2>
+            <div class="search-box">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar productos...">
             </div>
-
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#nuevos">Nuevos</a></li>
-                    <li><a href="#mujer">Mujer</a></li>
-                    <li><a href="#hombre">Hombre</a></li>
-                    <li><a href="#accesorios">Accesorios</a></li>
-                    <li><a href="#sale" class="sale-link">Sale</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-icons">
-                <button class="icon-btn search-btn" aria-label="Buscar">
-                    <i class="ph ph-magnifying-glass"></i>
-                </button>
-                <button class="icon-btn" aria-label="Usuario">
-                    <i class="ph ph-user"></i>
-                </button>
-                <button class="icon-btn wishlist-btn" aria-label="Favoritos">
-                    <i class="ph ph-heart"></i>
-                    <span class="cart-badge">3</span>
-                </button>
-                <button class="icon-btn cart-btn" aria-label="Carrito">
-                    <i class="ph ph-shopping-bag"></i>
-                    <span class="cart-badge">2</span>
-                </button>
+            <div class="trending-searches">
+                <p>Búsquedas populares:</p>
+                <div class="tags">
+                    <span class="tag">Vestidos</span>
+                    <span class="tag">Sneakers</span>
+                    <span class="tag">Accesorios</span>
+                    <span class="tag">Nueva Colección</span>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <i class="ph ph-list"></i>
+    <!-- Hero Fullscreen -->
+    <section class="hero-fullscreen" id="home">
+        <div class="hero-video-bg"></div>
+        <div class="hero-content-full">
+            <div class="hero-tag">Nueva Colección 2024</div>
+            <h1 class="hero-title-big">
+                <span class="word">Estilo</span>
+                <span class="word">Sin</span>
+                <span class="word">Límites</span>
+            </h1>
+            <p class="hero-subtitle">Descubre la moda que define tu personalidad</p>
+            <button class="cta-modern">
+                <span>Explorar Colección</span>
+                <i class="ph-bold ph-arrow-right"></i>
             </button>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Nueva Colección 2024</h1>
-            <p>Descubre las últimas tendencias en moda exclusiva</p>
-            <button class="cta-btn">
-                <i class="ph ph-shopping-bag"></i>
-                Comprar Ahora
-            </button>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Categories -->
-    <section class="categories">
-        <h2 class="section-title">Categorías Destacadas</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <div class="category-icon">
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+        <div class="promo-slider">
+            <span><i class="ph-fill ph-lightning"></i> Envío gratis en compras +$50</span>
+            <span><i class="ph-fill ph-gift"></i> 15% OFF primera compra</span>
+            <span><i class="ph-fill ph-truck"></i> Entrega 24-48h</span>
+            <span><i class="ph-fill ph-lightning"></i> Envío gratis en compras +$50</span>
+            <span><i class="ph-fill ph-gift"></i> 15% OFF primera compra</span>
+        </div>
+    </div>
+
+    <!-- Categories Grid Modern -->
+    <section class="categories-modern">
+        <div class="section-header-modern">
+            <h2>Explora por Categoría</h2>
+            <p>Encuentra tu estilo perfecto</p>
+        </div>
+        
+        <div class="categories-grid-modern">
+            <div class="category-card-modern" data-color="#FF6B9D">
+                <div class="category-image">
                     <i class="ph-fill ph-dress"></i>
                 </div>
-                <div class="category-info">
+                <div class="category-info-modern">
                     <h3>Vestidos</h3>
-                    <p>Elegancia en cada ocasión</p>
+                    <span>120+ productos</span>
+                    <button class="btn-explore">
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="ph-fill ph-t-shirt"></i>
-                </div>
-                <div class="category-info">
-                    <h3>Casual</h3>
-                    <p>Comodidad y estilo</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="ph-fill ph-handbag"></i>
-                </div>
-                <div class="category-info">
-                    <h3>Accesorios</h3>
-                    <p>Complementa tu look</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">
+            <div class="category-card-modern" data-color="#4ECDC4">
+                <div class="category-image">
                     <i class="ph-fill ph-sneaker"></i>
                 </div>
-                <div class="category-info">
+                <div class="category-info-modern">
                     <h3>Calzado</h3>
-                    <p>Para cada paso</p>
+                    <span>89+ productos</span>
+                    <button class="btn-explore">
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="category-card-modern" data-color="#FFB347">
+                <div class="category-image">
+                    <i class="ph-fill ph-handbag"></i>
+                </div>
+                <div class="category-info-modern">
+                    <h3>Accesorios</h3>
+                    <span>65+ productos</span>
+                    <button class="btn-explore">
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="category-card-modern" data-color="#A78BFA">
+                <div class="category-image">
+                    <i class="ph-fill ph-t-shirt"></i>
+                </div>
+                <div class="category-info-modern">
+                    <h3>Casual</h3>
+                    <span>200+ productos</span>
+                    <button class="btn-explore">
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="products" id="nuevos">
-        <h2 class="section-title">Productos Destacados</h2>
-        <div class="products-grid" id="productsGrid">
-            <!-- Los productos se cargarán dinámicamente con JavaScript -->
+    <!-- Products Horizontal Scroll -->
+    <section class="products-scroll" id="nuevos">
+        <div class="section-header-modern">
+            <h2>Nuevos Arrivals</h2>
+            <p>Las últimas tendencias</p>
+        </div>
+        
+        <div class="products-horizontal" id="productsHorizontal">
+            <!-- Products loaded by JS -->
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-item">
+    <!-- Split Banner -->
+    <section class="split-banner">
+        <div class="split-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="split-content">
+                <span class="split-tag">Mujer</span>
+                <h3>Colección Premium</h3>
+                <p>Descubre elegancia en cada detalle</p>
+                <button class="btn-outline-white">Ver Colección</button>
+            </div>
+        </div>
+        <div class="split-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <div class="split-content">
+                <span class="split-tag">Hombre</span>
+                <h3>Estilo Urbano</h3>
+                <p>Moda moderna para el hombre actual</p>
+                <button class="btn-outline-white">Ver Colección</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Circular -->
+    <section class="features-circular">
+        <div class="feature-circle">
+            <div class="circle-icon">
                 <i class="ph-fill ph-truck"></i>
-                <h3>Envío Rápido</h3>
-                <p>Entrega en 24-48 horas</p>
             </div>
-            <div class="feature-item">
-                <i class="ph-fill ph-credit-card"></i>
-                <h3>Pago Seguro</h3>
-                <p>Protección garantizada</p>
+            <h4>Envío Express</h4>
+            <p>24-48 horas</p>
+        </div>
+        <div class="feature-circle">
+            <div class="circle-icon">
+                <i class="ph-fill ph-shield-check"></i>
             </div>
-            <div class="feature-item">
+            <h4>Compra Segura</h4>
+            <p>Protección total</p>
+        </div>
+        <div class="feature-circle">
+            <div class="circle-icon">
                 <i class="ph-fill ph-arrow-counter-clockwise"></i>
-                <h3>Devoluciones Fáciles</h3>
-                <p>30 días para cambios</p>
             </div>
-            <div class="feature-item">
+            <h4>Devoluciones</h4>
+            <p>30 días gratis</p>
+        </div>
+        <div class="feature-circle">
+            <div class="circle-icon">
                 <i class="ph-fill ph-headset"></i>
-                <h3>Soporte 24/7</h3>
-                <p>Siempre aquí para ti</p>
             </div>
+            <h4>Soporte 24/7</h4>
+            <p>Siempre disponible</p>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="newsletter-content">
-            <i class="ph-fill ph-envelope-simple"></i>
-            <h2>Suscríbete a nuestro Newsletter</h2>
-            <p>Recibe las últimas novedades y ofertas exclusivas</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit" class="cta-btn">Suscribirse</button>
+    <!-- Newsletter Modern -->
+    <section class="newsletter-modern">
+        <div class="newsletter-card">
+            <div class="newsletter-icon">
+                <i class="ph-fill ph-paper-plane-tilt"></i>
+            </div>
+            <h2>Únete al Club</h2>
+            <p>Recibe ofertas exclusivas y las últimas novedades</p>
+            <form class="newsletter-form-modern">
+                <input type="email" placeholder="tu@email.com" required>
+                <button type="submit">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>MedusaaOnly</h3>
-                <p>Moda exclusiva que define tu estilo único</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
+    <!-- Footer Modern -->
+    <footer class="footer-modern">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="./assets/img/medu.jpg" alt="MedusaaOnly" class="footer-logo">
+                <p>Moda exclusiva que define tu estilo único y personalidad</p>
+                <div class="social-icons-modern">
+                    <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
                 </div>
             </div>
-
-            <div class="footer-section">
+            
+            <div class="footer-links">
                 <h4>Comprar</h4>
-                <ul>
-                    <li><a href="#">Mujer</a></li>
-                    <li><a href="#">Hombre</a></li>
-                    <li><a href="#">Accesorios</a></li>
-                    <li><a href="#">Sale</a></li>
-                </ul>
+                <a href="#">Mujer</a>
+                <a href="#">Hombre</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Sale</a>
             </div>
-
-            <div class="footer-section">
+            
+            <div class="footer-links">
                 <h4>Ayuda</h4>
-                <ul>
-                    <li><a href="#">Centro de Ayuda</a></li>
-                    <li><a href="#">Seguimiento de Pedido</a></li>
-                    <li><a href="#">Devoluciones</a></li>
-                    <li><a href="#">Tallas</a></li>
-                </ul>
+                <a href="#">Centro de Ayuda</a>
+                <a href="#">Rastrear Pedido</a>
+                <a href="#">Devoluciones</a>
+                <a href="#">Tallas</a>
             </div>
-
-            <div class="footer-section">
+            
+            <div class="footer-links">
                 <h4>Empresa</h4>
-                <ul>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                </ul>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Contacto</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
-            <p>&copy; 2024 MedusaaOnly. Todos los derechos reservados. | Prototipo de demostración</p>
+            <p>&copy; 2024 MedusaaOnly. Todos los derechos reservados.</p>
+            <p class="demo-tag">Prototipo de Demostración</p>
         </div>
     </footer>
 
+    <!-- Floating Cart Button (Mobile) -->
+    <button class="floating-cart-btn">
+        <i class="ph-fill ph-shopping-bag"></i>
+        <span class="floating-badge">2</span>
+    </button>
+
     <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
